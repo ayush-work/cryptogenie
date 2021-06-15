@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "./../Vector3.png";
-import cg from "./../logo2.png";
+
 import "boxicons";
 import Login from "./Login";
 import SelectCurrency from "./SelectCurrency";
@@ -10,7 +9,7 @@ import Sidebar from "./Sidebar";
 
 const Header = ({ login }) => {
   const [showSidebar, setShowSidebar] = useState(false);
-  const [sidebar, setSidebar] = useState(false);
+
   const curr = useSelector(selectCurrency);
   const [expand, setExpand] = useState(false);
   const [showDropdown, setShowDropDown] = useState(false);

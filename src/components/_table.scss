@@ -2,12 +2,16 @@
   padding: 0.5em 0.75em;
   background-color: $dark-bg;
   overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
   &__heading {
     margin-top: 1em;
-    padding: 0 0.75em;
-    font-size: 1.25rem;
+    padding: 0 0.5em;
+    font-size: 1.5rem;
     font-weight: 800;
-    color: $dark-text-grey;
+    // color: $dark-text-grey;
   }
   table {
     text-align: left;
@@ -16,6 +20,15 @@
     border-spacing: 0 0.5em;
     tbody {
       outline: 1px solid $dark-card;
+      transition: $anim;
+      // color: $dark-text;
+    }
+    th {
+      color: $dark-text;
+    }
+    tbody:hover {
+      transform: scale(1.015);
+      background-color: $dark-card;
     }
     td {
       outline: 1px solid $dark-card;
@@ -42,6 +55,10 @@
   &__coininfo {
     display: flex;
     align-items: center;
+    font-weight: 500;
+    span {
+      font-weight: 700;
+    }
   }
 
   &__pagination {

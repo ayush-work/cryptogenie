@@ -10,10 +10,20 @@
 @import "./../components/globaldata";
 @import "./../components/sidebar";
 @import "./../components/table";
+@import "./../components/footer";
+
+@font-face {
+  font-family: Hybrid;
+  src: url(./../assets/fonts/Hybrid_b.ttf);
+}
+
 * {
   border: 0;
   margin: 0;
   padding: 0;
+}
+:root::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -21,6 +31,7 @@ body {
   background-color: $dark-bg;
   color: $dark-text;
 }
-.CryptoPanicWidget::-webkit-scrollbar {
-  display: none;
+
+iframe {
+  margin-top: 2em;
 }

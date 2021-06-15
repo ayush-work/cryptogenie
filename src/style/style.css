@@ -586,12 +586,15 @@
   overflow-x: scroll;
 }
 
+.table::-webkit-scrollbar {
+  display: none;
+}
+
 .table__heading {
   margin-top: 1em;
-  padding: 0 0.75em;
-  font-size: 1.25rem;
+  padding: 0 0.5em;
+  font-size: 1.5rem;
   font-weight: 800;
-  color: #6c6c7c;
 }
 
 .table table {
@@ -603,6 +606,16 @@
 
 .table table tbody {
   outline: 1px solid #161b22;
+  transition: all ease-in-out 0.3s;
+}
+
+.table table th {
+  color: #b3d9ff;
+}
+
+.table table tbody:hover {
+  transform: scale(1.015);
+  background-color: #161b22;
 }
 
 .table table td {
@@ -632,6 +645,11 @@
 .table__coininfo {
   display: flex;
   align-items: center;
+  font-weight: 500;
+}
+
+.table__coininfo span {
+  font-weight: 700;
 }
 
 .table__pagination {
@@ -663,10 +681,144 @@
   }
 }
 
+.footer {
+  margin-top: 2em;
+  min-height: 150px;
+  padding: 0 0.5em;
+  background-color: #161b22;
+}
+
+.footer__wrapper {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__wrapper__right, .footer__wrapper__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer__wrapper__left {
+  flex: 0.4;
+}
+
+.footer__wrapper__left .footer__title__top__logo img {
+  width: 25px;
+}
+
+.footer__title__top__logo h2 {
+  color: #b3d9ff;
+}
+
+.footer__title__top__logo h2 span {
+  color: #2a95ff;
+}
+
+.footer__logo {
+  display: flex;
+  padding: 0.5em;
+  padding-bottom: 0;
+  justify-content: space-between;
+}
+
+.footer__copyright {
+  color: #6c6c7c;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.footer__copyright p {
+  margin-left: 0.5em;
+  font-size: 0.85rem;
+}
+
+.footer__title {
+  padding: 0.5em 0;
+  font-size: 1.25rem;
+}
+
+.footer__title p {
+  color: #6c6c7c;
+  font-size: 0.85rem;
+}
+
+.footer__title__top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.footer__title__top__logo {
+  display: flex;
+  align-items: flex-end;
+}
+
+.footer__title__top__logo h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-left: 0.5em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer__title__top__logo img {
+  width: 40px;
+}
+
+.footer__title__top a {
+  align-self: center;
+  width: 100%;
+}
+
+.footer__title__top a button {
+  width: 100%;
+  margin-top: 0.75em;
+  padding: 0.35em;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid #2a95ff;
+  transition: all ease-in-out 0.3s;
+  color: #2a95ff;
+}
+
+.footer__title__top a button:hover {
+  cursor: pointer;
+  background-color: #2a95ff;
+  transform: scale(0.95);
+  border: 2px solid transparent;
+  color: #0d1117;
+}
+
+@media screen and (max-width: 550px) {
+  .footer__wrapper {
+    flex-direction: column;
+  }
+  .footer__wrapper__left, .footer__wrapper__right {
+    width: 100%;
+  }
+  .footer__wrapper__right {
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+  }
+}
+
+@font-face {
+  font-family: Hybrid;
+  src: url(./../assets/fonts/Hybrid_b.ttf);
+}
+
 * {
   border: 0;
   margin: 0;
   padding: 0;
+}
+
+:root::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -675,7 +827,7 @@ body {
   color: #b3d9ff;
 }
 
-.CryptoPanicWidget::-webkit-scrollbar {
-  display: none;
+iframe {
+  margin-top: 2em;
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,7 +4,6 @@ import NewsList from "./NewsList";
 import Loading from "./Loading";
 import axios from "./../axios";
 import requests from "./../requests";
-import TrendingCurrency from "./TrendingCurrency";
 import FadeIn from "react-fade-in/lib/FadeIn";
 import GlobalData from "./GlobalData";
 import Sidebar from "./Sidebar";
@@ -13,6 +12,7 @@ import { selectLoadingStatus } from "../store/loadingSlice";
 import { selectCurrency } from "../store/currencySlice";
 import { apiLoaded } from "../store/loadingSlice";
 import { useSelector, useDispatch } from "react-redux";
+import Footer from "./Footer";
 const Landing = () => {
   const apiIsLoading = useSelector(selectLoadingStatus);
   const dispatch = useDispatch();
@@ -55,9 +55,7 @@ const Landing = () => {
               <Sidebar></Sidebar>
               <Table></Table>
               <NewsList></NewsList>
-              {/* <TrendingCurrency></TrendingCurrency> */}
-
-              {/* chart */}
+              <Footer></Footer>
             </div>
           </FadeIn>
         </>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 const GlobalData = ({ coins, totalMarketCap, dominance, defaultCurrency }) => {
   return (
     <div className="globaldata">

@@ -12,7 +12,7 @@ const Table = () => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        `${requests.marketOverview}?vs_currency=${currency}&order=market_cap_desc&per_page=50&page=${currentPage}&sparkline=false`
+        `${requests.marketOverview}?vs_currency=${currency}&order=market_cap_desc&per_page=50&page=${currentPage}&sparkline=false&price_change_percentage=7d`
       );
       setData(res.data);
     } catch (err) {
@@ -21,7 +21,7 @@ const Table = () => {
   };
   useEffect(() => {
     fetchData();
-  }, [currency, currentPage]);
+  }, [currency, currentPage, data]);
 
   return (
     <>
@@ -34,6 +34,7 @@ const Table = () => {
               <th>Name</th>
               <th>Price</th>
               <th>24h %</th>
+              <th>7D %</th>
               <th>Market Cap</th>
               <th>Total Volume</th>
             </tr>
@@ -41,13 +42,13 @@ const Table = () => {
 
           {data?.map((item) => {
             return (
-              <tbody>
+              <tbody key={item?.id}>
                 <tr>
                   <td>{item?.market_cap_rank}</td>
                   <td className="table__coininfo">
                     <img src={item?.image} alt="" />
                     <p>
-                      {item?.name} {item?.symbol.toUpperCase()}
+                      {item?.name} <span>{item?.symbol.toUpperCase()}</span>
                     </p>
                   </td>
                   <td>
@@ -76,7 +77,34 @@ const Table = () => {
                         size="8px"
                       ></box-icon>
                     )}{" "}
-                    {item?.price_change_percentage_24h?.toFixed(2)} %
+                    {Math.abs(item?.price_change_percentage_24h)?.toFixed(2)} %
+                  </td>
+                  <td
+                    className={`${
+                      item?.price_change_percentage_7d_in_currency < 0
+                        ? "table__pricechange--red"
+                        : "table__pricechange--green"
+                    }`}
+                  >
+                    {item?.price_change_percentage_7d_in_currency < 0 ? (
+                      <box-icon
+                        type="solid"
+                        name="down-arrow"
+                        color="#ea3943"
+                        size="8px"
+                      ></box-icon>
+                    ) : (
+                      <box-icon
+                        type="solid"
+                        name="up-arrow"
+                        color="#16c784"
+                        size="8px"
+                      ></box-icon>
+                    )}{" "}
+                    {Math.abs(
+                      item?.price_change_percentage_7d_in_currency
+                    )?.toFixed(2)}{" "}
+                    %
                   </td>
                   <td>{item?.market_cap.toLocaleString()}</td>
                   <td>{item?.total_volume.toLocaleString()}</td>
@@ -90,6 +118,7 @@ const Table = () => {
         {pages.map((page) => {
           return (
             <p
+              key={page}
               className={` ${
                 currentPage === page ? "table__pagination__selected" : ""
               }`}
