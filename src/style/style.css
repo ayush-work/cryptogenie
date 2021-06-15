@@ -688,6 +688,21 @@
   background-color: #161b22;
 }
 
+.footer__credit p {
+  color: #6c6c7c;
+  font-size: 0.85rem;
+}
+
+.footer__credit a {
+  margin-right: 0.5em;
+  text-decoration: none;
+  color: #b3d9ff;
+}
+
+.footer__credit a:hover {
+  color: #2a95ff;
+}
+
 .footer__wrapper {
   margin: 0 auto;
   width: 90%;
@@ -706,7 +721,7 @@
 }
 
 .footer__wrapper__left .footer__title__top__logo img {
-  width: 25px;
+  width: 22px;
 }
 
 .footer__title__top__logo h2 {

@@ -19,6 +19,23 @@ const Footer = () => {
               </div>
             </div>
           </div>
+          <div className="footer__credit">
+            <p>Made possible using:</p>
+            <a
+              href="https://www.coingecko.com/en/api"
+              target="_blank"
+              rel="noreferrer"
+            >
+              CoinGecko
+            </a>
+            <a
+              href="https://cryptopanic.com/developers/api/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              CryptoPanic
+            </a>
+          </div>
           <div className="footer__copyright">
             <div>
               <box-icon name="copyright" color="#6c6c7c" size="18px"></box-icon>

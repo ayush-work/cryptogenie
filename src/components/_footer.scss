@@ -4,6 +4,21 @@
   padding: 0 0.5em;
   background-color: $dark-card;
 
+  &__credit {
+    p {
+      color: $dark-text-grey;
+      font-size: 0.85rem;
+    }
+    a {
+      margin-right: 0.5em;
+      text-decoration: none;
+      color: $dark-text;
+      &:hover {
+        color: $logo-blue;
+      }
+    }
+  }
+
   &__wrapper {
     margin: 0 auto;
     width: 90%;
@@ -23,7 +38,7 @@
 
     .footer__title__top__logo {
       img {
-        width: 25px;
+        width: 22px;
       }
     }
   }
