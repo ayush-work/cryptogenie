@@ -1,0 +1,139 @@
+.footer {
+  margin-top: 2em;
+  min-height: 150px;
+  padding: 0 0.5em;
+  background-color: $dark-card;
+
+  &__credit {
+    p {
+      color: $dark-text-grey;
+      font-size: 0.85rem;
+    }
+    a {
+      margin-right: 0.5em;
+      text-decoration: none;
+      color: $dark-text;
+      &:hover {
+        color: $logo-blue;
+      }
+    }
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__wrapper__right,
+  &__wrapper__left {
+    // width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__wrapper__left {
+    flex: 0.4;
+
+    .footer__title__top__logo {
+      img {
+        width: 22px;
+      }
+    }
+  }
+  &__title__top__logo {
+    h2 {
+      color: $dark-text;
+      span {
+        color: $logo-blue;
+      }
+    }
+  }
+  &__logo {
+    display: flex;
+    padding: 0.5em;
+    padding-bottom: 0;
+    justify-content: space-between;
+  }
+  &__copyright {
+    color: $dark-text-grey;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-left: 0.5em;
+      font-size: 0.85rem;
+    }
+  }
+
+  &__title {
+    padding: 0.5em 0;
+    font-size: 1.25rem;
+    p {
+      color: $dark-text-grey;
+      font-size: 0.85rem;
+    }
+    &__top {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      &__logo {
+        display: flex;
+        align-items: flex-end;
+
+        h2 {
+          font-weight: 500;
+          font-size: 1.5rem;
+          margin-left: 0.5em;
+          font-family: $logo-font;
+        }
+        img {
+          width: 40px;
+        }
+      }
+
+      a {
+        align-self: center;
+        width: 100%;
+        button {
+          width: 100%;
+          margin-top: 0.75em;
+          padding: 0.35em;
+          border-radius: 5px;
+          font-weight: bold;
+          background-color: transparent;
+          border: 2px solid $logo-blue;
+          transition: $anim;
+          color: $logo-blue;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $logo-blue;
+            transform: scale(0.95);
+            border: 2px solid transparent;
+
+            color: $dark-bg;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    &__wrapper {
+      flex-direction: column;
+
+      &__left,
+      &__right {
+        width: 100%;
+      }
+
+      &__right {
+        margin-top: 2.5em;
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
