@@ -2,4 +2,4 @@
 
 
 # crypto.genie
-### Get cryptocurrency prices and market overview, and analysis such as crypto market cap , trading volumne, 24 high-low etc.
+### Get cryptocurrency prices, market overview, and analysis such as crypto market cap , trading volumne, 24 high-low etc.
